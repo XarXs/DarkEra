@@ -1,10 +1,12 @@
 #include "Main_Window.h"
 
 MainWindow::MainWindow(){
-	window = new RenderWindow(VideoMode(640, 480), "DarkEra-Project");
+	window = new RenderWindow(VideoMode(640, 480), "DarkEra-Project", Style::Close);
+	window->setFramerateLimit(30);
 }
 
 MainWindow::~MainWindow(){
+	cout << "destructor MainWindow\n";
 	delete window;
 	delete instance;
 }

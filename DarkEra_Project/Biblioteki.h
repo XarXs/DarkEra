@@ -8,4 +8,5 @@ using namespace sf;
 using namespace std;
 
 #include "Main_Window.h"
+#include "Game.h"
 
