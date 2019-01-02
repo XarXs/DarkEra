@@ -85,6 +85,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Main_Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Biblioteki.h" />
+    <ClInclude Include="Main_Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

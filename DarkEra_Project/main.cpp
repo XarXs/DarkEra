@@ -1,28 +1,27 @@
-#include <SFML/Graphics.hpp>
+#include "Biblioteki.h"
 #include <cmath>
-
 int main()
 {
-	sf::RenderWindow okno(sf::VideoMode(320, 240), "Kurs SFML 2.0 - http://cpp0x.pl");
+	MainWindow *okno = MainWindow::getMainWindow();
 	sf::Clock stoper;
-	while (okno.isOpen())
+	while (okno->getWindow()->isOpen())
 	{
-		sf::Event event;
-		while (okno.pollEvent(event))
+		Event event;
+		while (okno->getWindow()->pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
-				okno.close();
+				okno->getWindow()->close();
 
 		} //while
-		okno.clear();
+		okno->getWindow()->clear();
 
-		sf::CircleShape ksztalt(std::sin(stoper.getElapsedTime().asSeconds()) * okno.getSize().y / 8 + okno.getSize().y / 4);
+		sf::CircleShape ksztalt(std::sin(stoper.getElapsedTime().asSeconds()) * okno->getWindow()->getSize().y / 8 + okno->getWindow()->getSize().y / 4);
 		ksztalt.setOrigin(sf::Vector2f(ksztalt.getRadius(), ksztalt.getRadius()));
-		ksztalt.setPosition(okno.getSize().x / 2.0f, okno.getSize().y / 2.0f);
+		ksztalt.setPosition(okno->getWindow()->getSize().x / 2.0f, okno->getWindow()->getSize().y / 2.0f);
 		ksztalt.setFillColor(sf::Color::Yellow);
-		okno.draw(ksztalt);
+		okno->getWindow()->draw(ksztalt);
 
-		okno.display();
+		okno->getWindow()->display();
 	} //while
 	return 0;
 }
