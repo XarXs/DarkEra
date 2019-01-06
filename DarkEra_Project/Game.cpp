@@ -2,9 +2,11 @@
 
 Game::Game(){
 	okno = MainWindow::getMainWindow()->getWindow();
+	mainMenu = new MainMenu();
 }
 Game::~Game(){
 	cout << "destructor Game\n";
+	delete mainMenu;
 	delete okno;
 	delete MainWindow::getMainWindow();
 }
@@ -29,11 +31,7 @@ void Game::render(){
 	okno->clear();
 	
 	//rysowanie poszczególnych elementów
-	sf::CircleShape ksztalt(std::sin(stoper.getElapsedTime().asSeconds()) * okno->getSize().y / 8 + okno->getSize().y / 4);
-	ksztalt.setOrigin(sf::Vector2f(ksztalt.getRadius(), ksztalt.getRadius()));
-	ksztalt.setPosition(okno->getSize().x / 2.0f, okno->getSize().y / 2.0f);
-	ksztalt.setFillColor(sf::Color::Yellow);
-	okno->draw(ksztalt);
+	mainMenu->draw();
 	//wyœwietlanie
 	okno->display();
 }

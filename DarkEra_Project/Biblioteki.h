@@ -7,6 +7,9 @@
 using namespace sf;
 using namespace std;
 
+#include "Stale.h"
+
 #include "Main_Window.h"
 #include "Game.h"
+#include "MainMenu.h"
 

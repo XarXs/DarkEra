@@ -3,9 +3,12 @@
 #include "Biblioteki.h"
 
 class Game{
+	friend class MainMenu;
 private:
 	RenderWindow * okno;
 	Clock stoper;
+
+	MainMenu* mainMenu;
 	//g³ówne metody pêtli
 
 	void proccesEvents();
