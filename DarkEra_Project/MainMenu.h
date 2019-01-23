@@ -11,13 +11,18 @@ W nim są zawarte następujące opcje:
 
 class MainMenu{
 private:
+	int targetOption;//zaznaczona opcja;
 	Font font;		//czcionka
 	Text* text;		//wypisywane możliwe opcje
 	bool run;		//czy jest uruchumione menu, na początku true
 	RenderWindow* okno;
 public:
 
-	void draw();
+	void runMenu();		//pętla menu
+	void draw();	//rysowanie menu
+	void moveUp();	//poruszanie się do góry menu
+	void moveDown();//poruszanie się do dołu menu
+	void enter();	//wciśnięcie entera
 	MainMenu();
 	~MainMenu();
 };

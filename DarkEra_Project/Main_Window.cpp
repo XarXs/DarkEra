@@ -1,7 +1,7 @@
 #include "Main_Window.h"
 
 MainWindow::MainWindow(){
-	window = new RenderWindow(VideoMode(640, 480), "DarkEra-Project", Style::Close);
+	window = new RenderWindow(VideoMode(SZER, WYS), "DarkEra-Project", Style::Close);
 	window->setFramerateLimit(30);
 }
 
