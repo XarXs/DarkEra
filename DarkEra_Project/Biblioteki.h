@@ -4,6 +4,7 @@
 #include <SFML/System.hpp>
 
 #include <iostream>
+#include <string>
 using namespace sf;
 using namespace std;
 
@@ -12,4 +13,4 @@ using namespace std;
 #include "Main_Window.h"
 #include "Game.h"
 #include "MainMenu.h"
-
+#include "Option.h"
