@@ -8,18 +8,20 @@ MainWindow::MainWindow(){
 		cout << "Error: font not found\n";
 		exit(0);
 	}
-
-	if (!music.openFromFile("Music/Soundtrack_homemade_02.wav")){
+	music = new Music();
+	if (!music->openFromFile("Music/Soundtrack_homemade_02.wav")){
 		cout << "ERRO: Music not found\n";
 		exit(0);
 	}
 
-	music.setLoop(true);
+	music->setLoop(true);
 }
 
 MainWindow::~MainWindow(){
 	cout << "destructor MainWindow\n";
 	delete window;
+	music->stop();
+	delete music;
 	delete instance;
 }
 
@@ -36,26 +38,26 @@ RenderWindow* MainWindow::getWindow(){
 }
 
 void MainWindow::setMusic(string source){
-	if (!music.openFromFile(source)){
+	if (!music->openFromFile(source)){
 		cout << "ERROR: Music not found\n";
 		exit(0);
 	}
 }
 
 void MainWindow::playMusic(){
-	music.play();
+	music->play();
 }
 
 void MainWindow::stopMusic(){
-	music.stop();
+	music->stop();
 }
 
 void MainWindow::setValue(int value){
-	music.setVolume(value);
+	music->setVolume(value);
 }
 
 int MainWindow::getValue(){
-	return music.getVolume();
+	return music->getVolume();
 }
 
 void MainWindow::setFont(string source){
