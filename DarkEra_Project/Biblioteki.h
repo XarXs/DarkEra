@@ -14,3 +14,4 @@ using namespace std;
 #include "Game.h"
 #include "MainMenu.h"
 #include "Option.h"
+#include "MapBC.h"
