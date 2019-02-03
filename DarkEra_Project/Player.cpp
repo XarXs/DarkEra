@@ -17,6 +17,24 @@ Player::Player(){
 	y = sprite->getPosition().y;
 }
 
+Player::Player(int hp, int mp, int speed, int x, int y, string source){
+	this->hp = hp;
+	this->mp = mp;
+	this->speed = speed;
+	this->x = x;
+	this->y = y;
+
+	texture = new Texture();
+	if (!texture->loadFromFile(source)){
+		cout << "Error: Player texture not found\n";
+		exit(0);
+	}
+
+	sprite = new Sprite(*texture);
+	sprite->setScale(Vector2f(0.5, 0.5));
+	sprite->setPosition(Vector2f(x, y));
+}
+
 Player::~Player(){
 	delete texture;
 	delete sprite;
