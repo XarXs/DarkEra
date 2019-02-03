@@ -15,6 +15,7 @@ MainWindow::MainWindow(){
 	}
 
 	music->setLoop(true);
+
 }
 
 MainWindow::~MainWindow(){
@@ -22,6 +23,8 @@ MainWindow::~MainWindow(){
 	delete window;
 	music->stop();
 	delete music;
+	delete option;
+
 	delete instance;
 }
 
@@ -69,4 +72,13 @@ void MainWindow::setFont(string source){
 
 Font* MainWindow::getFont(){
 	return &font;
+}
+
+Options* MainWindow::getOption(){
+	static int pom = 1;
+	if (pom){
+		option = new Options();
+		pom = 0;
+	}
+	return option;
 }

@@ -90,6 +90,7 @@
     <ClCompile Include="Main_Window.cpp" />
     <ClCompile Include="MapBC.cpp" />
     <ClCompile Include="Option.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Biblioteki.h" />
@@ -98,6 +99,7 @@
     <ClInclude Include="Main_Window.h" />
     <ClInclude Include="MapBC.h" />
     <ClInclude Include="Option.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Stale.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

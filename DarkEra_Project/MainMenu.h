@@ -10,12 +10,10 @@ W nim są zawarte następujące opcje:
 #include "Biblioteki.h"
 
 class MainMenu{
-	friend class Options;
 private:
 	int targetOption;//zaznaczona opcja;
 	Text* text;		//wypisywane możliwe opcje
 	bool run;		//czy jest uruchumione menu, na początku true
-	Options *op;		//opcje
 	RenderWindow* okno;
 public:
 

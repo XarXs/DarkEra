@@ -15,3 +15,4 @@ using namespace std;
 #include "MainMenu.h"
 #include "Option.h"
 #include "MapBC.h"
+#include "Player.h"
