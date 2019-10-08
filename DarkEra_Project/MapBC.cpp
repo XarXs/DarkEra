@@ -20,11 +20,14 @@ Mapa::~Mapa(){
 }
 
 void Mapa::render(){
-	for (int i = 0; i < mSzer; i++){
-		for (int j = 0; j < mWys; j++){
-			cout << map[i][j];
+	static int pp = 1;
+	if (pp--){
+		for (int i = 0; i < mSzer; i++){
+			for (int j = 0; j < mWys; j++){
+				cout << map[i][j];
+			}
+			cout << endl;
 		}
-		cout << endl;
 	}
 	//okno->draw(*sprite);
 }
