@@ -1,5 +1,4 @@
 #include "Biblioteki.h"
-#include <cmath>
 int main()
 {
 	srand(time(NULL));
