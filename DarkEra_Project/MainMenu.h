@@ -11,7 +11,9 @@ W nim są zawarte następujące opcje:
 
 class MainMenu{
 	friend class Options;
+	friend class Mapa;
 private:
+	Mapa* map;
 	int targetOption;//zaznaczona opcja;
 	Text* text;		//wypisywane możliwe opcje
 	bool run;		//czy jest uruchumione menu, na początku true
