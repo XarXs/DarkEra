@@ -1,9 +1,18 @@
 #include "Biblioteki.h"
-#include <cmath>
-int main()
-{
-	Game *gra = new Game();
-	gra->run();
-	delete gra;
+
+int main(){
+	try{
+		Game *g = new Game;
+		g->run();
+		delete g;
+	}
+	catch (string w){
+		cout << endl;
+		cout << "==============================================\n";
+		cout << "Exception " << w << endl;
+	}
+
+	delete TextWriter::getInstance();
+	delete GameWindow::getInstance();
 	return 0;
 }
