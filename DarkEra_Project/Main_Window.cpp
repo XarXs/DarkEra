@@ -15,6 +15,8 @@ MainWindow::MainWindow(){
 	}
 
 	music->setLoop(true);
+
+	camera = new Camera();
 }
 
 MainWindow::~MainWindow(){
@@ -22,6 +24,7 @@ MainWindow::~MainWindow(){
 	delete window;
 	music->stop();
 	delete music;
+	delete camera;
 	delete instance;
 }
 
@@ -69,4 +72,8 @@ void MainWindow::setFont(string source){
 
 Font* MainWindow::getFont(){
 	return &font;
+}
+
+Camera* MainWindow::getCamera(){
+	return camera;
 }
