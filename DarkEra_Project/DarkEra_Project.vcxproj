@@ -90,6 +90,7 @@
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Main_Window.cpp" />
     <ClCompile Include="MapBC.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="Option.cpp" />
     <ClCompile Include="PlayerBC.cpp" />
   </ItemGroup>
@@ -100,6 +101,7 @@
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Main_Window.h" />
     <ClInclude Include="MapBC.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="Option.h" />
     <ClInclude Include="PlayerBC.h" />
     <ClInclude Include="Stale.h" />
