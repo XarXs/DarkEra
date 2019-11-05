@@ -18,4 +18,4 @@ using namespace std;
 #include "Option.h"
 #include "MapBC.h"
 #include "PlayerBC.h"
-//#include "Object.h"
+#include "Object.h"
