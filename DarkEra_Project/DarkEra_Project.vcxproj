@@ -86,18 +86,23 @@
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Key.cpp" />
+    <ClCompile Include="LevelOne.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Main_Window.cpp" />
     <ClCompile Include="MapBC.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Option.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerBC.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Biblioteki.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Inventory.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Main_Window.h" />
     <ClInclude Include="MapBC.h" />
