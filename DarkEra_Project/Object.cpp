@@ -4,12 +4,7 @@ Object::Object(){
 	Id = 0;
 	name = "none";
 	okno = MainWindow::getMainWindow()->getWindow();
-	tex = new Texture();
-	if (!tex->loadFromFile("Texture/default.png")){
-		string e = "Object error: Don't found default texture\n";
-		throw e;
-	}
-	sprite = new Sprite(*tex);
+	sprite = new Sprite(*TextureHandler::getTextureHandler()->getTexture("Texture/default.png"));
 	sprite->setPosition(0, 0);
 	sprite->setScale(SCALE, SCALE);
 }
@@ -17,23 +12,8 @@ Object::Object(){
 Object::Object(int Id, string name, Vector2f position, string tex){
 	this->Id = Id;
 	this->name = name;
-	this->tex = new Texture();
-	if (!this->tex->loadFromFile(tex)){
-		string e = "Object error: Don't found default texture\n";
-		throw e;
-	}
-	sprite = new Sprite(*this->tex);
+	sprite = new Sprite(*TextureHandler::getTextureHandler()->getTexture(tex));
 	sprite->setPosition(position);
-
-	okno = MainWindow::getMainWindow()->getWindow();
-}
-
-Object::Object(Object &obj){
-	this->Id = obj.getId();
-	this->name = obj.getName();
-	this->tex = new Texture( obj.getTexture());
-	sprite = new Sprite(*this->tex);
-	sprite->setPosition(obj.getPostion());
 
 	okno = MainWindow::getMainWindow()->getWindow();
 }
@@ -41,7 +21,6 @@ Object::Object(Object &obj){
 Object::~Object(){
 	okno = NULL;
 	delete sprite;
-	delete tex;
 }
 
 //========================
@@ -58,18 +37,9 @@ Vector2f Object::getPostion(){
 }
 
 void Object::setSprite(string tex){
-	Texture tx;
-	
-	if (tx.loadFromFile(tex)){
-		this->tex->loadFromFile(tex);
-		delete sprite;
-		sprite = new Sprite(*this->tex);
-		sprite->setScale(Vector2f(SCALE, SCALE));
-	}
-	else{
-		string e = "error with loading texture for key! \n";
-		throw(e);
-	}
+	delete sprite;
+	sprite = new Sprite(*TextureHandler::getTextureHandler()->getTexture(tex));
+	sprite->setScale(Vector2f(SCALE, SCALE));
 }
 
 void Object::setSprite(Texture tex){
