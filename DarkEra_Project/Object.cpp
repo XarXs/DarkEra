@@ -62,7 +62,9 @@ void Object::setSprite(string tex){
 	
 	if (tx.loadFromFile(tex)){
 		this->tex->loadFromFile(tex);
-		sprite->setTexture(*this->tex);
+		delete sprite;
+		sprite = new Sprite(*this->tex);
+		sprite->setScale(Vector2f(SCALE, SCALE));
 	}
 	else{
 		string e = "error with loading texture for key! \n";
@@ -71,7 +73,9 @@ void Object::setSprite(string tex){
 }
 
 void Object::setSprite(Texture tex){
-	sprite->setTexture(tex);
+	delete sprite;
+	sprite = new Sprite(tex);
+	sprite->setScale(Vector2f(SCALE, SCALE));
 }
 
 void Object::setName(string name){
