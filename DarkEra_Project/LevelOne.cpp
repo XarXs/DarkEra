@@ -20,7 +20,7 @@ void LevelOne::generateMap(){
 void LevelOne::update(Player &token){
 	int item = collisionItems(token);
 	if (item){
-		bool use = items.find(item)->second->interaction(&token);
+		bool use = token.interaction(*items.find(item)->second);
 		if (use) items.erase(item);
 	}
 }

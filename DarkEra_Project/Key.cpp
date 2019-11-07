@@ -12,10 +12,7 @@ Key::Key(Key &key, string tex){
 	setId(key.getId());
 }
 
-bool Key::interaction(Player *player){
-	if (Keyboard::isKeyPressed(Keyboard::F)) {
-		player->pickUp(*this);
-		return true;
-	}
-	return false;
+void Key::interaction(Player *player){
+	
+	player->pickUp(*this);
 }
