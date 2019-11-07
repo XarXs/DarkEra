@@ -13,8 +13,7 @@ void LevelOne::generateMap(){
 
 	} while (Map[x][y] >= 3);
 
-	//key.setPosition(Vector2f(x * TEXSIZE, y*TEXSIZE));
-	key->setPosition(Vector2f(getPos().x * TEXSIZE, getPos().y * TEXSIZE));
+	key->setPosition(Vector2f(x * TEXSIZE + 25, y*TEXSIZE + 25));
 	items[1] = key;
 }
 
