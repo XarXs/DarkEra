@@ -105,6 +105,6 @@ void Object::interaction(){
 bool Object::interaction(Mapa *map){
 	return false;
 }
-bool Object::interaction(Player *player){
-	return false;
+void Object::interaction(Player *player){
+	
 }
