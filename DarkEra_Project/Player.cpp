@@ -15,14 +15,15 @@ Player::~Player(){
 	delete eq;
 }
 
-bool Player::interaction(Object obj){
+bool Player::interaction(Object &obj){
 	if (Keyboard::isKeyPressed(Keyboard::F)) {
+		obj.interaction(this);
 		return true;
 	}
 	return false;
 }
 
-void Player::pickUp(Object obj){
+void Player::pickUp(Object &obj){
 	eq->addItem(obj);
 }
 
