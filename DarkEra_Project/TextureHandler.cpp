@@ -4,6 +4,13 @@ TextureHandler::TextureHandler(){
 }
 
 TextureHandler::~TextureHandler(){
+	cout << "Texture Handler destructor\n";
+	map<string, Texture*>::iterator iter;
+	cout << "Deleting tekstures\n";
+	for (iter = tekstury.begin(); iter != tekstury.end(); ++iter){
+		delete iter->second;
+	}
+	cout << "Deleting instance\n";
 	instance = NULL;
 }
 
