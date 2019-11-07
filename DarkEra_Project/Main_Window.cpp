@@ -5,13 +5,13 @@ MainWindow::MainWindow(){
 	window->setFramerateLimit(30);
 
 	if (!font.loadFromFile("Fonts/NewRocker-Regular.otf")){
-		cout << "Error: font not found\n";
-		exit(0);
+		string e = "Error: font not found\n";
+		throw(e);
 	}
 	music = new Music();
 	if (!music->openFromFile("Music/Soundtrack_homemade_02.wav")){
-		cout << "ERRO: Music not found\n";
-		exit(0);
+		string e = "ERRO: Music not found\n";
+		throw(e);
 	}
 
 	music->setLoop(true);
@@ -21,11 +21,12 @@ MainWindow::MainWindow(){
 
 MainWindow::~MainWindow(){
 	cout << "destructor MainWindow\n";
-	delete window;
 	music->stop();
 	delete music;
 	delete camera;
-	delete instance;
+	delete window;
+	instance = NULL;
+	cout << "end of MainWindow destructor\n";
 }
 
 MainWindow* MainWindow::instance = 0;
@@ -42,8 +43,8 @@ RenderWindow* MainWindow::getWindow(){
 
 void MainWindow::setMusic(string source){
 	if (!music->openFromFile(source)){
-		cout << "ERROR: Music not found\n";
-		exit(0);
+		string e = "ERROR: Music not found\n";
+		throw(e);
 	}
 }
 
@@ -65,8 +66,8 @@ int MainWindow::getValue(){
 
 void MainWindow::setFont(string source){
 	if (!font.loadFromFile(source)){
-		cout << "Error: font not found\n";
-		exit(0);
+		string e = "Error: font not found\n";
+		throw(e);
 	}
 }
 

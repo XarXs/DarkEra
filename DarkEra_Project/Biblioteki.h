@@ -6,6 +6,8 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <vector>
+#include <map>
 using namespace sf;
 using namespace std;
 
@@ -19,3 +21,4 @@ using namespace std;
 #include "MapBC.h"
 #include "PlayerBC.h"
 #include "Object.h"
+#include "Inventory.h"
