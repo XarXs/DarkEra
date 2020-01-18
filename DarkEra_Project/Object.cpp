@@ -1,6 +1,7 @@
 #include "Object.h"
 
 Object::Object(){
+	renderable = false;
 	Id = 0;
 	name = "none";
 	okno = MainWindow::getMainWindow()->getWindow();
@@ -25,7 +26,8 @@ Object::~Object(){
 
 //========================
 void Object::render(){
-	okno->draw(*sprite);
+	if (renderable)
+		okno->draw(*sprite);
 }
 
 void Object::setPosition(Vector2f pos){
