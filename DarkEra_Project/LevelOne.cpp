@@ -2,9 +2,11 @@
 
 void LevelOne::generateMap(){
 	Mapa::generateMap();
+	cout << "Tworzenie obiektu na mapie\n";
 	Key *key = new Key();
 	int x;
 	int y;
+	cout << "Losowanie pozycji obiektu\n";
 	do{
 		x = (rand() % (getMapSize().x + 2)) - 2;
 		y = (rand() % (getMapSize().y + 2)) - 2;
@@ -13,6 +15,7 @@ void LevelOne::generateMap(){
 
 	} while (Map[x][y] >= 3);
 
+	cout << "Ustawianie pozycji obiektu\n";
 	key->setPosition(Vector2f(x * TEXSIZE + 25, y*TEXSIZE + 25));
 	items[1] = key;
 }
