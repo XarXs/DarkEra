@@ -1,7 +1,7 @@
 #include "PlayerBC.h"
 
-Player::Player(string name, Vector2f position, string tex, int speed, Vector2f scale){
-	Player::Token(name, position, tex, speed, scale);
+Player::Player(string name, int hp, int atack, int def, Vector2f position, string tex, int speed, Vector2f scale){
+	Player::Token(name, hp, atack, def, position, tex, speed, scale);
 	Player::Token::setName(name);
 	Player::Token::setPosition(position);
 	Player::Token::setScale(scale);
