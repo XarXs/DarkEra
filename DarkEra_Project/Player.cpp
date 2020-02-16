@@ -7,6 +7,10 @@ Player::Player(string name, int hp, int atack, int def, Vector2f position, strin
 	Player::Token::setScale(scale);
 	Player::Token::setSprite(tex);
 	Player::Token::setSpeed(speed);
+	maxHP = hp;
+	hpBar.setSize(Vector2f(100, 20));
+	hpBar.setFillColor(Color::Red);
+	hpBar.setPosition(25, 25);
 
 	eq = new Inventory();
 }
@@ -28,10 +32,14 @@ void Player::pickUp(Object &obj){
 }
 
 void Player::HudRender(){
-
+	View view;
+	view.setViewport(FloatRect(0, 0, 1, 1));
+	MainWindow::getMainWindow()->getWindow()->setView(view);
+	MainWindow::getMainWindow()->getWindow()->draw(hpBar);
 }
 
 void Player::render(){
 	Token::render();
 	eq->render();
+	this->HudRender();
 }
