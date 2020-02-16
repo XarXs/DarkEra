@@ -5,7 +5,7 @@ Object::Object(){
 	Id = 0;
 	name = "none";
 	okno = MainWindow::getMainWindow()->getWindow();
-	sprite = new Sprite(*TextureHandler::getTextureHandler()->getTexture("Texture/default.png"));
+	sprite = new Sprite(*TextureHandler::getTextureHandler()->getTexture("default.png"));
 	sprite->setPosition(0, 0);
 	sprite->setScale(SCALE, SCALE);
 }

@@ -32,8 +32,11 @@ void TextureHandler::addTexture(string source){
 }
 
 Texture *TextureHandler::getTexture(string source){
-	if (tekstury.find(source) == tekstury.end()){
-		addTexture(source);
+	string url = TEXTURE;
+	url.append(source);
+
+	if (tekstury.find(url) == tekstury.end()){
+		addTexture(url);
 	}
-	return tekstury.find(source)->second;
+	return tekstury.find(url)->second;
 }

@@ -1,7 +1,7 @@
 #include "Object.h"
 
 Key::Key(){
-	Object::setSprite("Texture/key.png");
+	Object::setSprite("key.png");
 	Object::setName("Klucz");
 	Object::setId(1);
 }

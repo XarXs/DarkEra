@@ -8,4 +8,5 @@ private:
 public:
 	void render();
 	void addItem(Object &obj);
+	bool gotKey(string keyName);
 };
