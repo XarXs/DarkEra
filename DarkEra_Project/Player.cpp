@@ -35,6 +35,7 @@ void Player::HudRender(){
 	View view;
 	view.setViewport(FloatRect(0, 0, 1, 1));
 	MainWindow::getMainWindow()->getWindow()->setView(view);
+	hpBar.setSize(Vector2f((100 * hp) / maxHP, 20));
 	MainWindow::getMainWindow()->getWindow()->draw(hpBar);
 }
 
