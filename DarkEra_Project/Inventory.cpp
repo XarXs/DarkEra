@@ -13,3 +13,13 @@ void Inventory::render(){
 void Inventory::addItem(Object &obj){
 	items.push_back(new Object(obj));
 }
+
+bool Inventory::gotKey(string keyName){
+	for (int i = 0; i < items.size(); i++){
+		if (items[i]->getName() == keyName){
+			items.erase(items.begin()+ i);
+			return true;
+		}
+	}
+	return false;
+}
