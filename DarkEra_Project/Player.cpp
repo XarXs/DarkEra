@@ -27,6 +27,10 @@ void Player::pickUp(Object &obj){
 	eq->addItem(obj);
 }
 
+void Player::HudRender(){
+
+}
+
 void Player::render(){
 	Token::render();
 	eq->render();
