@@ -31,6 +31,10 @@ void Player::pickUp(Object &obj){
 	eq->addItem(obj);
 }
 
+bool Player::gotKey(string keyName){
+	return eq->gotKey(keyName);
+}
+
 void Player::HudRender(){
 	View view;
 	view.setViewport(FloatRect(0, 0, 1, 1));
