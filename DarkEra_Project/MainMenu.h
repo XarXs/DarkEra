@@ -17,9 +17,10 @@ private:
 	bool run;		//czy jest uruchumione menu, na początku true
 	Options *op;		//opcje
 	RenderWindow* okno;
+	bool exit;
 public:
 
-	void runMenu();		//pętla menu
+	bool runMenu();		//pętla menu
 	void draw();	//rysowanie menu
 	void moveUp();	//poruszanie się do góry menu
 	void moveDown();//poruszanie się do dołu menu

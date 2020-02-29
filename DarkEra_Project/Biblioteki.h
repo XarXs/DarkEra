@@ -23,3 +23,4 @@ using namespace std;
 #include "PlayerBC.h"
 #include "Object.h"
 #include "Inventory.h"
+#include "MapGenerator.h"
