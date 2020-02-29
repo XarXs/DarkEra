@@ -1,7 +1,7 @@
 #pragma once
+#include "Biblioteki.h"
 
-class MapGenerator
-{
+class MapGenerator {
 protected:
 public:
 	int generate();
